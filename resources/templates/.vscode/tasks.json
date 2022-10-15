@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "tailwind",
+			"problemMatcher": [],
+			"label": "npm: tailwind",
+			"detail": "npx tailwindcss -i ./app/sass/tailwind.css -o ./dist/css/tailwind.css --watch"
+		}
+	]
+}
