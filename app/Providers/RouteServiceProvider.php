@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
-use Domain\Auth\Routing\AuthRegistrar;
+use App\Routing\AuthRegistrar;
 use Whoops\Exception\ErrorException;
 
 class RouteServiceProvider extends ServiceProvider
@@ -74,8 +74,9 @@ class RouteServiceProvider extends ServiceProvider
         {
             //TODO
             //TODO RuntimeException
-            /*if(!class_exists($registrar) || !is_subclass_of($registrar, RouteRegistrar::class))
+           /* if(!class_exists($registrar) || !is_subclass_of($registrar, RouteRegistrar::class))
             {
+               // print $registrar;die();
                 throw new ErrorException(sprintf(
                     'Cannot map routes \'%s\', it is not valid routes class',
                     $registrar

@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: egoleva
- * Date: 24.10.22
- * Time: 8:30
- */
 
-namespace App\Traits\Models;
+namespace Support\Traits\Models;
 
 
 use Illuminate\Database\Eloquent\Model;

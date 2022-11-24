@@ -30,7 +30,6 @@ class SignInController extends Controller
 
     public function handle(SignInFormRequest $request): RedirectResponse
     {
-        //TODO auth() не работает с domain user
         if(!auth()->attempt($request->validated()))
         {
             return back()->withErrors([

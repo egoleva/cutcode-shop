@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->unsignedInteger('price')->default(0);
 
-            $table->foreignIdFor(\App\Models\Brand::class)
+            $table->foreignIdFor(\Domain\Catalog\Models\Brand::class)
                 ->nullable()
                 ->constrained()
                 ->nullOnDelete()
@@ -35,7 +35,7 @@ return new class extends Migration
         Schema::create('category_product', function (Blueprint $table)
         {
             $table->id();
-            $table->foreignIdFor(\App\Models\Category::class)
+            $table->foreignIdFor(\Domain\Catalog\Models\Category::class)
                 ->constrained()
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
