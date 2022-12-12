@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Routing\AppRegistrar;
+use App\Routing\ProductRegistrar;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Contracts\Routing\Registrar;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -11,6 +12,7 @@ use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 use App\Routing\AuthRegistrar;
+use App\Routing\CatalogRegistrar;
 use Whoops\Exception\ErrorException;
 
 class RouteServiceProvider extends ServiceProvider
@@ -27,6 +29,8 @@ class RouteServiceProvider extends ServiceProvider
     protected $registrars = [
             AppRegistrar::class,
             AuthRegistrar::class,
+            CatalogRegistrar::class,
+            ProductRegistrar::class,
     ];
 
     /**

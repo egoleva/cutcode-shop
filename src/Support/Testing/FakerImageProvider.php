@@ -9,13 +9,14 @@ class FakerImageProvider extends Base
 {
     public function fixturesImage(string $fixturesDir, string $storageDir): string
     {
-        if(!Storage::exists($storageDir))
+        $storage = Storage::disk('images');
+        if(!$storage->exists($storageDir))
         {
-            Storage::makeDirectory($storageDir);
+            $storage->makeDirectory($storageDir);
         }
         $file = $this->generator->file(
             base_path("/tests/Fixtures/images/$fixturesDir"),
-            Storage::path($storageDir),
+            $storage->path($storageDir),
             false
         );
         return '/storage/' . trim($storageDir, '/') . '/' . $file;

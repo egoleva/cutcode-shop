@@ -2,6 +2,7 @@
 
 namespace Domain\Catalog\Models;
 
+use App\Models\Product;
 use Domain\Catalog\QueryBuilders\BrandQueryBuilder;
 use Support\Traits\Models\HasThumbnail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

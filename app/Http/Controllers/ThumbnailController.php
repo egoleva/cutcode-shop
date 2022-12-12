@@ -30,6 +30,8 @@ class ThumbnailController extends Controller
         $newDirPath = "$dir/$method/$size";
         $resultPath = "$newDirPath/$file";
 
+
+
         if(!$storage->exists($newDirPath))
         {
             $storage->makeDirectory($newDirPath);

@@ -13,7 +13,13 @@ class CategoryViewModel
 
     public function homePage()
     {
-        return Cache::tags['category']->rememberForever('category_home_page', function (){
+
+        return Category::query()
+            ->homePage()
+            ->get();
+        //куда то делся кеш
+        //tags not found in this version return Cache::tags['category']->rememberForever('category_home_page', function (){
+        return Cache::rememberForever('category_home_page', function (){
              Category::query()
                 ->homePage()
                 ->get();
